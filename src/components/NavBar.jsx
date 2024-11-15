@@ -7,7 +7,7 @@ const Navbar = () => {
     const[isMenuOpen, setIsMenuOpen] = useState("false");
 
   return (
-    <nav className="fixed top-0 w-full bg-charcoal-dark bg-opacity-90 py-4 px-8 shadow-md z-50">
+    <nav className="fixed top-0 w-full bg-charcoal-dark bg-opacity-100 py-7 px-8 shadow-md z-50">
       <div className="container mx-auto flex justify-between items-center md:flex-row ">
         {/* Logo or Brand Name */}
        <img src={logo} alt="Jothi Enterprises" className='w-28 md:w-32 lg:w-40 xl:w-48 mb-4 items-center cursor-pointer' href="/" />
