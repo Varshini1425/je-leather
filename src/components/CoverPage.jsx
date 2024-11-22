@@ -2,7 +2,7 @@ import React from 'react';
 
 const CoverPage = () => {
   return (
-    <section id="home" className="h-screen bg-cover-image bg-no-repeat bg-cover flex   flex-col justify-center items-center text-center pt-72 text-white p-6">
+    <section id="home" className="min-h-screen bg-cover-image bg-no-repeat bg-cover flex   flex-col justify-center items-center text-center pt-72 text-white p-6">
       
       <h1 className=" md:text-8xl sm:text-6xl text-4xl font-bold bg-gradient-to-r from-slate-100 to-metallicGold  bg-clip-text text-transparent">
         JOTHI ENTERPRISES
