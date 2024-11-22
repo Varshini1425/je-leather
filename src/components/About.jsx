@@ -15,7 +15,7 @@ const About = () => {
     {
       title: "Core Values",
       content: (
-        <ul className="list-disc list-inside">
+        <ul className="list-disc pl-6">
           <li>Quality</li>
           <li>Integrity</li>
           <li>Innovation</li>
@@ -27,7 +27,7 @@ const About = () => {
     {
       title: "Why Choose Us",
       content: (
-        <ul className="list-disc list-inside">
+        <ul className="list-disc pl-6">
           <li>Expertise in leather machinery</li>
           <li>Precision and durability</li>
           <li>Reliable customer support</li>
@@ -39,38 +39,49 @@ const About = () => {
   ];
 
   return (
-    <section id="about-us" className="bg-gray-100 py-12 px-6 sm:px-12 mb-80">
-      <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800">
+    <section
+      id="about-us"
+      className="py-16 px-6 sm:px-12 mb-80 bg-gradient-to-b from-charcoal-dark via-charcoal-light via-darkGreen via-metallicGold via-charcoal-light to-charcoal-dark"
+    >
+      <div className="max-w-7xl mx-auto text-center mb-16">
+        <h2 className="text-3xl sm:text-5xl font-bold text-slate-100">
           About Us
         </h2>
-        <p className="mt-4 text-lg sm:text-xl text-gray-600">
+        <p className="mt-6 text-base sm:text-2xl text-slate-300">
           At{" "}
-          <span className="text-green-600 font-semibold">Jothi Enterprise</span>
-          , we specialize in providing precision-engineered leather machine
-          spares and services. With a commitment to quality and customer
-          satisfaction, we empower the leather industry with innovative,
-          durable, and reliable solutions.
+          <span className="font-bold">Jothi Enterprise</span>, we specialize in
+          providing precision-engineered leather machine spares and services.
+          With a commitment to quality and customer satisfaction, we empower
+          the leather industry with innovative, durable, and reliable solutions.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-12 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
         {sections.map((section, index) => (
           <div
             key={section.title}
-            className={`flex flex-col lg:flex-row items-center lg:space-x-6 ${
-              index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-            }`}
+            className=" bg-me shadow-lg rounded-lg overflow-hidden flex flex-col lg:flex-row items-stretch transform hover:scale-105"
           >
-            <div className="lg:w-1/2 p-6 bg-white shadow rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-800">{section.title}</h3>
-              <p className="mt-2 text-gray-600">{section.content}</p>
+            {/* Content */}
+            <div className="lg:w-1/2 p-8 flex flex-col justify-center ">
+              <h3 className="text-[25px] font-semibold text-white md:text-start text-center ">
+                {section.title}
+              </h3>
+              <div  className="mt-4  text-[20px] md:text-[18px] text-white md:text-start text-center">
+                {typeof section.content === "string" ? (
+                  <span>{section.content}</span>
+                ) : (
+                  section.content
+                )}
+              </div>
             </div>
-            <div className="lg:w-1/2 mt-6 lg:mt-0">
+
+            {/* Image */}
+            <div className="lg:w-1/2 relative">
               <img
                 src={section.image}
                 alt={section.title}
-                className="w-full h-auto rounded-lg shadow-md"
+                className="w-full h-80 sm:h-full object-cover"
               />
             </div>
           </div>

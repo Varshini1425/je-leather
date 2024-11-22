@@ -37,7 +37,7 @@ const Navbar = () => {
         </nav>
       </div>
       {isMenuOpen && (
-        <div className='md:hidden text-metallicGold'>
+        <div className='md:hidden block text-metallicGold'>
           <ul className='py-2'>
             {navItems.map((item) =>(
               <li key={item} className='px-4 py-2'>
