@@ -1,90 +1,104 @@
-import sectionImages from "../assets/sectionImages";
+import React from "react";
+import { motion } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import sectionImages from "../assets/sectionImages"; // Replace with your actual image imports
+
+const sections = [
+  {
+    title: "Mission",
+    content: `Our mission is to empower the leather industry with precision-engineered spares and reliable services. 
+    We are committed to enhancing operational efficiency, fostering innovation, and ensuring that every product we deliver meets the highest standards of quality.`,
+    image: sectionImages.aboutMission,
+  },
+  {
+    title: "Vision",
+    content: `Our vision is to become the global leader in leather machinery solutions. We strive to set the industry standard for trust, innovation, and excellence, 
+    building strong partnerships and enabling businesses worldwide to achieve their goals with confidence.`,
+    image: sectionImages.aboutVision,
+  },
+  {
+    title: "Core Values",
+    content: `Our values define who we are and guide us in everything we do. They
+          are the foundation of our commitment to delivering excellence and
+          driving innovation.`,
+    image: sectionImages.aboutCoreValues,
+  },
+  {
+    title: "Why Choose Us",
+    content: `We stand out for our unmatched expertise in leather machinery. Our precision-engineered products, personalized solutions, 
+    and exceptional customer support ensure that you can rely on us as your trusted partner for all your needs.`,
+    image: sectionImages.aboutWhyChooseUs,
+  },
+];
+
+const fadeInAnimation = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const About = () => {
-  const sections = [
-    {
-      title: "Mission",
-      content: "To deliver high-quality spares and reliable services that ensure precision and efficiency in the leather industry.",
-      image: sectionImages.aboutMission,
-    },
-    {
-      title: "Vision",
-      content: "To be the global leader in innovative solutions for leather machinery, trusted by industries worldwide.",
-      image: sectionImages.aboutVision,
-    },
-    {
-      title: "Core Values",
-      content: (
-        <ul className="list-disc pl-6">
-          <li>Quality</li>
-          <li>Integrity</li>
-          <li>Innovation</li>
-          <li>Customer Satisfaction</li>
-        </ul>
-      ),
-      image: sectionImages.aboutCoreValues,
-    },
-    {
-      title: "Why Choose Us",
-      content: (
-        <ul className="list-disc pl-6">
-          <li>Expertise in leather machinery</li>
-          <li>Precision and durability</li>
-          <li>Reliable customer support</li>
-          <li>Customized solutions</li>
-        </ul>
-      ),
-      image: sectionImages.aboutWhyChooseUs,
-    },
-  ];
-
   return (
     <section
-      id="about-us"
-      className="py-16 px-6 sm:px-12 mb-80 bg-gradient-to-b from-charcoal-dark via-charcoal-light via-darkGreen via-metallicGold via-charcoal-light to-charcoal-dark"
+      id="about"
+      className="py-20 bg-gradient-to-b from-charcoal-dark to-charcoal-light"
     >
-      <div className="max-w-7xl mx-auto text-center mb-16">
-        <h2 className="text-3xl sm:text-5xl font-bold text-slate-100">
+      <motion.div
+        className="max-w-7xl mx-auto text-center mb-16"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInAnimation}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-3xl sm:text-6xl md:text-7xl font-bold text-metallicGold mb-6 tracking-wider leading-tight">
           About Us
         </h2>
-        <p className="mt-6 text-base sm:text-2xl text-slate-300">
-          At{" "}
-          <span className="font-bold">Jothi Enterprise</span>, we specialize in
-          providing precision-engineered leather machine spares and services.
-          With a commitment to quality and customer satisfaction, we empower
-          the leather industry with innovative, durable, and reliable solutions.
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-300 leading-relaxed">
+          Delivering excellence in leather machinery with innovative and
+          reliable solutions tailored to your business needs.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {sections.map((section, index) => (
-          <div
+          <motion.div
             key={section.title}
-            className=" bg-me shadow-lg rounded-lg overflow-hidden flex flex-col lg:flex-row items-stretch transform hover:scale-105"
+            className={`flex flex-col ${
+              index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"
+            } items-center mb-12 gap-8`}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInAnimation}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
           >
-            {/* Content */}
-            <div className="lg:w-1/2 p-8 flex flex-col justify-center ">
-              <h3 className="text-[25px] font-semibold text-white md:text-start text-center ">
-                {section.title}
-              </h3>
-              <div  className="mt-4  text-[20px] md:text-[18px] text-white md:text-start text-center">
-                {typeof section.content === "string" ? (
-                  <span>{section.content}</span>
-                ) : (
-                  section.content
-                )}
-              </div>
-            </div>
-
-            {/* Image */}
-            <div className="lg:w-1/2 relative">
-              <img
+            {/* Image Container */}
+            <motion.div
+              className="w-full sm:w-3/4 lg:w-1/2 aspect-[4/3] max-w-full lg:max-w-[400px] px-8 relative overflow-hidden rounded-lg shadow-lg"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.4 }}
+            >
+              <LazyLoadImage
                 src={section.image}
                 alt={section.title}
-                className="w-full h-80 sm:h-full object-cover"
+                effect="blur"
+                className="w-full h-full object-cover"
               />
+            </motion.div>
+
+            {/* Content */}
+            <div className="lg:w-1/2 max-w-[500px] mx-auto text-center lg:text-left">
+              <motion.div>
+                <h3 className="text-4xl sm:text-5xl font-semibold text-metallicGold mb-4">
+                  {section.title}
+                </h3>
+                <p className="text-lg sm:text-xl text-slate-300 leading-relaxed">
+                  {section.content}
+                </p>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
