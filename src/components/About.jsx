@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import sectionImages from "../assets/sectionImages"; // Replace with your actual image imports
+import sectionImages from "../assets/sectionImages"; 
 
 const sections = [
   {
@@ -90,10 +90,10 @@ const About = () => {
             {/* Content */}
             <div className="lg:w-1/2 max-w-[500px] mx-auto text-center lg:text-left">
               <motion.div>
-                <h3 className="text-4xl sm:text-5xl font-semibold text-metallicGold mb-4">
+                <h3 className="text-2xl sm:text-5xl font-semibold text-metallicGold mb-4">
                   {section.title}
                 </h3>
-                <p className="text-lg sm:text-xl text-slate-300 leading-relaxed">
+                <p className="text- sm:text-xl text-slate-300 leading-relaxed">
                   {section.content}
                 </p>
               </motion.div>
