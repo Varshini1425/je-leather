@@ -41,7 +41,7 @@ const CoverPage = () => {
 
       <motion.a
         href="#services"
-        className="bg-gradient-to-bl from-metallicGold to-slate-100 text-charcoal-dark font-semibold py-2 px-5 md:py-3 md:px-8 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-darkGreen hover:to-charcoal-light hover:text-slate-300 transition duration-300 z-10"
+        className="bg-gradient-to-bl from-metallicGold to-slate-100 text-charcoal-dark font-semibold py-2 px-5 md:py-3 md:px-8 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-darkGreen hover:to-charcoal-light hover:text-slate-300 transition duration-100 z-10"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, delay: 1 }}
