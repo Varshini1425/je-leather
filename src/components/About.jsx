@@ -54,7 +54,7 @@ const About = () => {
         <h2 className="text-3xl sm:text-6xl md:text-7xl font-bold text-metallicGold mb-6 tracking-wider leading-tight">
           About Us
         </h2>
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-300 leading-relaxed">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl px-6 text-slate-300 leading-relaxed">
           Delivering excellence in leather machinery with innovative and
           reliable solutions tailored to your business needs.
         </p>
@@ -90,10 +90,10 @@ const About = () => {
             {/* Content */}
             <div className="lg:w-1/2 max-w-[500px] mx-auto text-center lg:text-left">
               <motion.div>
-                <h3 className="text-2xl sm:text-5xl font-semibold text-metallicGold mb-4">
+                <h3 className="text-xl sm:text-5xl font-semibold text-metallicGold mb-4">
                   {section.title}
                 </h3>
-                <p className="text- sm:text-xl text-slate-300 leading-relaxed">
+                <p className="text-lg sm:text-xl px-6 text-slate-300 leading-relaxed">
                   {section.content}
                 </p>
               </motion.div>

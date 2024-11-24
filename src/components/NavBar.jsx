@@ -25,7 +25,7 @@ const Navbar = () => {
     <header className="fixed top-0 w-full bg-charcoal-dark bg-opacity-95 py-3 px-6 shadow-lg z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <img src={logo} alt="Logo" className="w-14 cursor-pointer" />
+        <img src={logo} alt="Logo" className="w-14 cursor-pointer hover:scale-110 "onClick={() => handleScroll("Home")} />
 
         {/* Hamburger Menu Button */}
         <button
@@ -42,8 +42,7 @@ const Navbar = () => {
               key={item}
               onClick={() => handleScroll(item)}
               href={`#${item.toLowerCase().replace(" ", "-")}`}
-              className="text-metallicGold hover:text-darkGreen transition duration-300"
-            >
+              className="text-metallicGold hover:text-transparent hover:bg-gradient-to-tl hover:from-white hover:to-darkGreen hover:bg-clip-text transform hover:scale-110 transition duration-300"            >
               {item}
             </a>
           ))}
