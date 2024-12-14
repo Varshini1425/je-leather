@@ -16,7 +16,7 @@ module.exports = {
         darkGreen: '#5A7466',
       },
       backgroundImage: {
-        'cover-image': "url('/Users/varshini/Documents/ClientProjects/jothienterpriseProj/jothi-enterprise/src/assets/coverPic.jpg')", 
+       'cover-image': "url('./src/assets/coverPic.jpg')",
       },
     },
   },
