@@ -16,7 +16,7 @@ module.exports = {
         darkGreen: '#5A7466',
       },
       backgroundImage: {
-       'cover': "url('./src/assets/coverPic.jpg')",
+       'cover': "url('./public/coverPic.jpg')",
       },
     },
   },
